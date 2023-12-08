@@ -1,0 +1,99 @@
+$header-bg: #1c2b35;
+
+.profile {
+	display: flex;
+	padding: 10vw 20vw;
+
+	font-size: 1vw;
+
+	flex-grow: 1;
+}
+
+.profileContainer {
+	display: flex;
+	align-items: flex-start;
+
+	align-items: center;
+	flex-grow: 1;
+	padding: 3vw 0vw;
+	gap: 15vw;
+	height: max-content;
+}
+
+.profileForm {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5vw;
+	font-size: 1.5vw;
+
+	& > .inputGroup {
+		display: flex;
+		gap: 1vw;
+
+		position: relative;
+		& > label {
+			flex-grow: 1;
+			color: $header-bg;
+			align-self: center;
+		}
+
+		& > input {
+			border: 1px solid transparent;
+			outline: none;
+			width: 20vw;
+			padding: 0.5vw;
+			transition: all 200ms;
+
+			&::placeholder {
+				color: rgba(#000, 0.3);
+			}
+		}
+		& > input:disabled {
+			background: transparent;
+			color: rgba(#000, 0.9);
+		}
+	}
+}
+
+.profilePic {
+	width: 5vw;
+	height: auto;
+}
+
+.profilePicIcon {
+	font-size: 10vw;
+	color: lighten($header-bg, 10%);
+}
+
+.editIcon {
+	border-radius: 50%;
+	height: 2.2vw;
+	width: 2.2vw;
+
+	background: rgba($header-bg, 0.2);
+	color: $header-bg;
+}
+
+.icon {
+	position: absolute;
+	right: -10%;
+	top: 50%;
+	transform: translateY(-50%);
+
+	font-size: 1.2vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	cursor: pointer;
+}
+
+.doneIcon {
+	color: orange;
+	transition: all 200ms;
+	font-size: 1.5vw;
+
+	&:hover {
+		color: green;
+	}
+}

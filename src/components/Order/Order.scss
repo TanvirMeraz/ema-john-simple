@@ -1,0 +1,83 @@
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	font-size: inherit;
+}
+
+.review {
+	display: flex;
+	justify-content: space-evenly;
+	//align-items: center;
+	flex: 1;
+	height: fit-content;
+	position: relative;
+	padding: 1vw;
+
+	.summary {
+		position: sticky;
+		top: 5vw;
+		min-width: 23.7vw;
+		width: fit-content;
+		height: fit-content;
+		background-color: rgba(255, 153, 0, 0.3);
+
+		border-radius: 0.5vw;
+		padding: 1.2vw;
+		font-size: 1.05vw;
+
+		&-details {
+			margin: 0 2.7vw;
+			& * {
+				margin-bottom: 2vw;
+			}
+			& h1 {
+				font-size: 2.63vw;
+			}
+			& p:last-of-type {
+				font-weight: bold;
+			}
+		}
+
+		& .btns {
+			display: flex;
+			flex-direction: column;
+
+			& * {
+				padding: 0.84vw;
+				color: #fff;
+				border: none;
+				border-radius: 4px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-size: 1.1vw;
+				cursor: pointer;
+			}
+
+			& .clear {
+				margin-bottom: 0.84vw;
+				background-color: #ff3030;
+				transition: all 200ms;
+
+				&:hover {
+					background-color: darken(#ff3030, 10%);
+				}
+			}
+
+			& .chk-out {
+				background-color: #ff9900;
+
+				&:hover {
+					background-color: darken(#ff9900, 5%);
+				}
+			}
+
+			&-icon {
+				height: 1.26vw;
+				width: 1.26vw;
+			}
+		}
+	}
+}

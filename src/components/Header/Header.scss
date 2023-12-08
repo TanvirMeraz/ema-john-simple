@@ -1,0 +1,96 @@
+.header {
+	background-color: #1c2b35;
+	height: 4vw;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 6vw;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+
+	& > img.logo {
+		width: 7vw;
+	}
+
+	& > .links {
+		min-width: 21vw;
+		box-sizing: content-box;
+		width: max-content;
+		gap: 3vw;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		& > a {
+			text-decoration: none;
+			color: #fff;
+			font-size: 1.2vw;
+			display: flex;
+			align-items: center;
+			position: relative;
+
+			& > i[customtitle]::after {
+				transition: all 200ms;
+				opacity: 0;
+
+				position: absolute;
+				bottom: -110%;
+				left: -50%;
+				background: #1c2b35;
+
+				height: max-content;
+				padding: 10% 30%;
+				width: max-content;
+				box-sizing: content-box;
+
+				font-size: 70%;
+				color: white;
+				font-style: normal;
+				border: 1px solid rgba(#fff, 0.3);
+				content: attr(customTitle);
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			& > i[customtitle]:hover::after {
+				opacity: 1;
+			}
+
+			&:hover {
+				color: #ff9900;
+			}
+
+			& > .bi {
+				font-size: 1.7vw;
+				// border: 1px solid white;
+			}
+
+			& > .header-profile-pic {
+				width: 2vw;
+				height: 2vw;
+				border-radius: 50%;
+			}
+
+			& > svg {
+				align-self: center;
+				width: 1.5vw;
+				height: 1.5vw;
+				// border: 1px solid white;
+			}
+		}
+
+		& > .signOut {
+			border: none;
+			background: transparent;
+			color: #fff;
+			font-size: 1.2vw;
+			cursor: pointer;
+			&:hover {
+				color: #ff9900;
+			}
+		}
+	}
+}

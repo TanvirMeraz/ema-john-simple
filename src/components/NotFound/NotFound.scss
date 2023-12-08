@@ -1,0 +1,23 @@
+.notFound {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+
+	& h1 {
+		font-size: 3.26vw;
+		font-weight: 300;
+		color: #2a414f;
+		text-align: center;
+
+		& span:not(:last-of-type) {
+			margin-right: 1.84vw;
+		}
+
+		& .line {
+			//border: 1px solid black;
+			height: 3vw;
+			color: #ff9900;
+		}
+	}
+}

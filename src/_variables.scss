@@ -1,0 +1,161 @@
+@mixin login-signup {
+	width: 26.31vw;
+	margin: 0 auto;
+	margin-top: 6.73vw;
+	border: 1px solid $border-color;
+	border-radius: 0.42vw;
+
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	padding: 2.21vw;
+	margin-bottom: 2vw;
+
+	box-shadow: -0.63vw 0.63vw 0 $btn-bg;
+
+	& > h1 {
+		text-align: center;
+
+		margin-bottom: 1.52vw;
+		font-size: 1.84vw;
+		font-weight: 400;
+		color: #2a414f;
+	}
+
+	& > form {
+		& > .input-group {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 1.2vw;
+
+			& > label {
+				margin-bottom: 0.47vw;
+				font-size: calc(20 / 19) * 1vw;
+			}
+
+			& > input {
+				font-size: 1.2vw;
+				padding: 0.7vw;
+				border: 1px solid $border-color;
+				border-radius: 0.26vw;
+				transition: all 200ms;
+
+				&:focus {
+					outline: none;
+					border-color: darken($border-color, 50%);
+				}
+			}
+		}
+
+		& > .error {
+			font-size: 1vw;
+		}
+
+		& > button {
+			width: 100%;
+		}
+	}
+
+	& button {
+		padding: 0.84vw 0vw;
+		border: none;
+		border-radius: calc(5 / 19) * 1vw;
+		cursor: pointer;
+		transition: all 200ms;
+		background: transparent;
+		margin-top: 1vw;
+		font-size: calc(21 / 19) * 1vw;
+
+		&.email-login {
+			background: $btn-bg;
+			position: relative;
+			margin-bottom: calc(9 / 19) * 1vw;
+			&:hover {
+				background: lighten(orange, 10%);
+			}
+			& > .circle {
+				@include spinner-circle(60%);
+			}
+		}
+
+		&.google-login {
+			border: 1px solid $border-color;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+
+			& > img {
+				width: 1.5vw;
+				margin-right: calc(13 / 19) * 1vw;
+			}
+
+			&:hover {
+				border-color: darken($border-color, 30%);
+			}
+
+			& > .circle {
+				@include spinner-circle(80%);
+			}
+		}
+	}
+
+	& > p {
+		text-align: center;
+		font-size: 1vw;
+		margin-bottom: 2vw;
+
+		& > a {
+			color: #ff9900;
+			cursor: pointer;
+			text-decoration: none;
+			transition: all 200ms;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	& > .or {
+		width: calc(354 / 19) * 1vw;
+		border: 1px solid lighten($border-color, 15%);
+		position: relative;
+		margin-bottom: calc(29 / 19) * 1vw;
+		align-self: center;
+		& > p {
+			font-size: calc(17 / 19) * 1vw;
+			color: lighten($border-color, 15%);
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%, -60%);
+			background: white;
+			padding: 0 1vw;
+		}
+	}
+}
+
+@mixin spinner-circle($left) {
+	position: absolute;
+	top: 30%;
+	left: $left;
+
+	width: 1.2vw;
+	height: 1.2vw;
+	border: 0.2vw solid lighten(black, 90%);
+	border-top: 0.2vw solid black;
+	border-radius: 50%;
+
+	animation: spin 1500ms linear;
+	animation-iteration-count: infinite;
+	animation-fill-mode: forwards;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

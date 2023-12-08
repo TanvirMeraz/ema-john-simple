@@ -1,0 +1,15 @@
+*,
+*::before,
+*::after {
+	user-select: none;
+	padding: 0;
+	margin: 0;
+	font-size: inherit;
+	font-family: inherit;
+}
+
+.body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
